@@ -1,6 +1,7 @@
 using apbd_lab12.Data;
 using apbd_lab12.Services;
 using apbd_lab12.Data;
+using apbd_lab12.Middlewares;
 using apbd_lab12.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -31,5 +32,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapControllers();
+
+app.UseMiddleware<CustomExceptionHandler>();
 
 app.Run();
