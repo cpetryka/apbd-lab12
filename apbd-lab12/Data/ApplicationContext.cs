@@ -1,4 +1,5 @@
 using apbd_lab12.Models;
+using apbd_lab12.Models.Security;
 using Microsoft.EntityFrameworkCore;
 
 namespace apbd_lab12.Data;
@@ -10,6 +11,7 @@ public class ApplicationContext : DbContext
     public DbSet<Patient> Patients { get; set; }
     public DbSet<Prescription> Prescriptions { get; set; }
     public DbSet<PrescriptionMedication> PrescriptionMedications { get; set; }
+    public DbSet<User> Users { get; set; }
 
     protected ApplicationContext()
     {
@@ -172,5 +174,10 @@ public class ApplicationContext : DbContext
                 Details = "Przed posiłkiem"
             }
         });
+
+        /*modelBuilder.Entity<User>().HasData(new List<User>()
+        {
+
+        });*/
     }
 }
